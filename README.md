@@ -3,7 +3,7 @@
 Dense, pretty status bar for [Claude Code](https://claude.com/claude-code) — TokyoNight Night palette, designed to pair with [Ghostty](https://ghostty.org/) terminal.
 
 ```
- my-project  Sonnet 4.6 ▏  main ▏ in74k out847 ▏ ⏱ 10m ▏ ▼74k/▲239 ▏ $0.80 ctx37%
+ my-project  Sonnet 4.6 ▏  main ▏ in74k out847 ▏ ⏱ 10m ▏ ▼74k/▲239 ▏ $0.80 ▏ ▰▰▰▰▱▱▱▱▱▱ 37%
 ```
 
 ## What it shows
@@ -17,7 +17,9 @@ Dense, pretty status bar for [Claude Code](https://claude.com/claude-code) — T
 | ⏱ Session time | `.cost.total_duration_ms` |
 | ▼/▲ Cache | Cache read / cache creation (current turn) |
 | $ Cost | `.cost.total_cost_usd` cumulative |
-| ctx% | Context window used percentage |
+| ▰▰▰▱ % | Context gauge — `.context_window.used_percentage` as a gradient bar |
+
+The context gauge fills left to right along a green → yellow → orange → red gradient, and the percentage takes the color of the last filled cell — when it turns orange (~60%), it's time to `/compact`.
 
 ## Install
 
